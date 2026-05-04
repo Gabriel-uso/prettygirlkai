@@ -1,180 +1,109 @@
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { TWENTY_ONE_REASONS } from '../config'
+import { AnimatePresence, motion } from 'framer-motion'
+import { ASSETS, TWENTY_ONE_REASONS } from '../config'
 
-// Sticker Component
-function ReasonSticker({ reason, index, isRevealed, onClick }) {
-  const colors = ['#ff69b4', '#ffd700', '#00ffff', '#da70d6', '#4169e1', '#ff7f7f', '#98ff98']
-  const color = colors[index % colors.length]
-  
+export default function TwentyOneReasons() {
+  const [activeIndex, setActiveIndex] = useState(0)
+  const activeReason = TWENTY_ONE_REASONS[activeIndex]
+
   return (
-    <motion.div
-      layoutId={`sticker-${index}`}
-      className="relative"
-      initial={{ scale: 0, rotate: Math.random() * 20 - 10 }}
-      animate={{ 
-        scale: isRevealed ? 1 : 0.9,
-        rotate: isRevealed ? 0 : Math.random() * 10 - 5
-      }}
-      whileHover={{ scale: 1.1, zIndex: 10 }}
-      whileTap={{ scale: 0.95 }}
-      onClick={onClick}
-    >
-      <motion.div
-        className="p-4 rounded-lg cursor-pointer"
-        style={{
-          backgroundColor: color,
-          boxShadow: isRevealed 
-            ? `0 0 20px ${color}, 0 8px 32px rgba(0,0,0,0.2)` 
-            : '0 4px 16px rgba(0,0,0,0.1)'
-        }}
-      >
-        <div className="bg-white/90 p-3 rounded">
-          <p className="font-['Gaegu'] text-lg text-center text-[#1a1a2e] leading-relaxed">
-            {reason}
+    <section id="reasons" className="relative z-10 px-5 py-28 sm:px-8">
+      <div className="mx-auto max-w-[1380px]">
+        <div className="mb-14 grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+          <div>
+            <p className="kicker">side b / the proof</p>
+            <h2 className="mt-4 max-w-3xl font-serif text-[clamp(3.8rem,10vw,10rem)] italic leading-[0.78] tracking-[-0.03em] text-rust">
+              21 reasons why
+            </h2>
+          </div>
+          <p className="max-w-xl text-lg leading-8 text-ink/68">
+            Built like a vintage album insert: every row is a track, every track is one more reason she deserves the whole room softened for her.
           </p>
         </div>
-        
-        {/* Heart decoration */}
-        <motion.div
-          className="absolute -top-2 -right-2 text-2xl"
-          animate={isRevealed ? { scale: [1, 1.3, 1] } : { scale: 1 }}
-          transition={{ repeat: isRevealed ? Infinity : 0, duration: 1 }}
-        >
-          💖
-        </motion.div>
-        
-        {/* Number badge */}
-        <div className="absolute -bottom-2 -left-2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md">
-          <span className="font-['Cherry_Bomb_One'] text-[#4169e1]">{index + 1}</span>
-        </div>
-      </motion.div>
-    </motion.div>
-  )
-}
 
-// Main TwentyOneReasons Component
-export default function TwentyOneReasons({ onNavigate }) {
-  const [revealedItems, setRevealedItems] = useState(new Set())
-  const [showAll, setShowAll] = useState(false)
+        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="relative border border-ink bg-[#f4b7ca] p-4 shadow-paper sm:p-7">
+            <div className="relative border border-ink bg-cream p-4 sm:p-7">
+              <div className="mb-5 grid grid-cols-4 border border-ink text-center font-mono text-[10px] uppercase tracking-[0.16em] text-ink">
+                <span className="border-r border-ink px-2 py-2">number</span>
+                <span className="border-r border-ink px-2 py-2">length</span>
+                <span className="border-r border-ink px-2 py-2">tracks</span>
+                <span className="px-2 py-2">artist</span>
+                <span className="border-r border-t border-ink px-2 py-2">21</span>
+                <span className="border-r border-t border-ink px-2 py-2">forever</span>
+                <span className="border-r border-t border-ink px-2 py-2">21</span>
+                <span className="border-t border-ink px-2 py-2">Kai</span>
+              </div>
 
-  const toggleItem = (index) => {
-    const newRevealed = new Set(revealedItems)
-    if (newRevealed.has(index)) {
-      newRevealed.delete(index)
-    } else {
-      newRevealed.add(index)
-    }
-    setRevealedItems(newRevealed)
-  }
+              <div className="max-h-[650px] overflow-y-auto border-y border-ink">
+                {TWENTY_ONE_REASONS.map((reason, index) => (
+                  <button
+                    key={reason}
+                    type="button"
+                    onClick={() => setActiveIndex(index)}
+                    className={`grid w-full grid-cols-[42px_1fr_56px] items-center gap-3 border-b border-ink/35 px-2 py-3 text-left transition last:border-b-0 sm:grid-cols-[60px_1fr_70px] ${
+                      activeIndex === index ? 'bg-rust text-cream' : 'hover:bg-blush/25'
+                    }`}
+                  >
+                    <span className="font-mono text-xs">{String(index + 1).padStart(2, '0')}</span>
+                    <span className="font-mono text-xs uppercase tracking-[0.08em] sm:text-sm">
+                      {reason}
+                    </span>
+                    <span className="text-right font-mono text-xs">{index === 20 ? '21:00' : '3:21'}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
 
-  const revealAll = () => {
-    setShowAll(true)
-    setRevealedItems(new Set(TWENTY_ONE_REASONS.map((_, i) => i)))
-  }
+            <img
+              src={ASSETS.petal}
+              alt=""
+              className="absolute -right-7 top-8 w-24 rotate-[28deg] drop-shadow-cutout"
+            />
+            <img
+              src={ASSETS.sunflower}
+              alt=""
+              className="absolute -bottom-9 left-8 w-28 rotate-[-12deg] drop-shadow-cutout"
+            />
+          </div>
 
-  const revealedCount = revealedItems.size
-
-  return (
-    <div className="min-h-screen py-20 px-4">
-      {/* Header */}
-      <motion.div
-        className="text-center mb-12"
-        initial={{ y: -30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-      >
-        <h2 className="text-5xl md:text-7xl font-['Cherry_Bomb_One'] text-[#ff69b4] mb-4"
-            style={{
-              textShadow: '2px 2px 0 #ffd700, 4px 4px 0 #00ffff'
-            }}>
-          21 Reasons Why 💝
-        </h2>
-        <p className="text-xl font-['Gaegu'] text-[#da70d6]">
-          Click each sticker to reveal the love! 
-          <span className="ml-2 text-[#ffd700]">({revealedCount}/21)</span>
-        </p>
-      </motion.div>
-
-      {/* Action Buttons */}
-      <motion.div
-        className="flex justify-center gap-4 mb-12"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
-      >
-        <motion.button
-          onClick={revealAll}
-          className="px-6 py-2 bg-[#ffd700] text-[#4169e1] font-['Cherry_Bomb_One'] rounded-full shadow-lg hover:shadow-[0_0_20px_#ffd700]"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          ✨ Reveal All
-        </motion.button>
-        <motion.button
-          onClick={() => onNavigate(0)}
-          className="px-6 py-2 bg-[#00ffff] text-[#4169e1] font-['Cherry_Bomb_One'] rounded-full shadow-lg"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          ← Back
-        </motion.button>
-      </motion.div>
-
-      {/* Sticker Grid */}
-      <div className="max-w-6xl mx-auto">
-        <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
-          layout
-        >
-          <AnimatePresence>
-            {TWENTY_ONE_REASONS.map((reason, index) => (
-              <ReasonSticker
-                key={index}
-                reason={reason}
-                index={index}
-                isRevealed={showAll || revealedItems.has(index)}
-                onClick={() => toggleItem(index)}
-              />
-            ))}
-          </AnimatePresence>
-        </motion.div>
-      </div>
-
-      {/* Completion Message */}
-      <AnimatePresence>
-        {revealedCount === 21 && (
-          <motion.div
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            className="text-center mt-16"
-          >
-            <motion.div
-              className="inline-block px-8 py-4 bg-gradient-to-r from-[#ff69b4] to-[#da70d6] rounded-2xl shadow-2xl"
-              animate={{ 
-                boxShadow: [
-                  '0 0 20px #ff69b4',
-                  '0 0 40px #ffd700',
-                  '0 0 20px #ff69b4'
-                ]
-              }}
-              transition={{ repeat: Infinity, duration: 2 }}
-            >
-              <p className="font-['Gaegu'] text-2xl text-white">
-                🎉 You discovered all 21 reasons! 🎉
+          <aside className="relative min-h-[580px]">
+            <img
+              src={ASSETS.photoStrip}
+              alt=""
+              className="absolute right-[4%] top-0 w-[52%] rotate-[8deg] drop-shadow-cutout"
+            />
+            <div className="absolute left-0 top-[18%] w-[82%] border border-ink bg-paper p-6 shadow-paper sm:p-9">
+              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-rust">
+                selected reason / {String(activeIndex + 1).padStart(2, '0')}
               </p>
-            </motion.div>
-            
-            <motion.button
-              onClick={() => onNavigate(2)}
-              className="mt-6 px-8 py-3 bg-[#00ffff] text-[#4169e1] font-['Cherry_Bomb_One'] text-xl rounded-full shadow-lg hover:shadow-[0_0_30px_#00ffff]"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              🌸 See the Finale →
-            </motion.button>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+              <AnimatePresence mode="wait">
+                <motion.p
+                  key={activeReason}
+                  className="mt-8 font-serif text-[clamp(3rem,7vw,6.7rem)] italic leading-[0.9] tracking-[-0.03em] text-ink"
+                  initial={{ y: 18, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -18, opacity: 0 }}
+                  transition={{ duration: 0.28 }}
+                >
+                  {activeReason}
+                </motion.p>
+              </AnimatePresence>
+              <div className="mt-8 flex items-center gap-3 border-t border-ink pt-4">
+                <img src={ASSETS.googleEyes} alt="" className="w-11 rotate-[-8deg]" />
+                <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink/55">
+                  click a track to change the note
+                </p>
+              </div>
+            </div>
+            <img
+              src={ASSETS.exclamation}
+              alt=""
+              className="absolute bottom-10 right-12 w-20 rotate-[11deg] drop-shadow-cutout"
+            />
+          </aside>
+        </div>
+      </div>
+    </section>
   )
 }
