@@ -1,63 +1,32 @@
-# 🎂 21st Birthday Digital Scrapbook
+# Kai Turns 21
 
-A Y2K Retro-Pop themed interactive birthday website built with React, Tailwind CSS, and Framer Motion.
+A romantic Y2K-inspired birthday website built with React, Tailwind CSS, Vite, and Framer Motion.
 
-## ✨ Features
+## What It Includes
 
-- **Hero Dashboard**: Retro CRT TV frame with floating draggable photo frames (polaroid, filmstrip, cassette)
-- **21 Reasons Why**: Interactive sticker grid with pop animations
-- **Growth Finale**: Animated counter with flower blooming and handwritten letter
-- **Music Controller**: Winamp-style floating player
-- **Visual Effects**: Floating bubbles, glassmorphism overlay, CRT scanlines
+- Glossy browser-window navigation
+- Romantic hero section with chrome-style cards
+- Editable memory archive
+- Interactive "21 reasons why" love-note grid
+- Animated 21st birthday finale and handwritten letter
+- Floating webcore heart background
+- Floating music controller
 
-## 🎨 Design
+## Customize
 
-- **Aesthetic**: Y2K Retro-Pop / Retro OS
-- **Fonts**: Cherry Bomb One, Gaegu, Itim (Google Fonts)
-- **Colors**: Hot pink, gold, cyan, purple, royal blue
+Most personal content lives in `src/config.js`:
 
-## 📁 Project Structure
+- `SITE_COPY` for the birthday girl name and hero copy
+- `BACKGROUND_MUSIC` for the audio track
+- `HERO_MEDIA` for the main image
+- `PHOTO_FRAMES` for the memory archive
+- `TWENTY_ONE_REASONS` for the note grid
+- `TIMELINE` and `LETTER_CONTENT` for the finale
 
+## Commands
+
+```bash
+npm install
+npm run dev
+npm run build
 ```
-src/
-├── config.js          # Editable configuration (music, photos, messages)
-├── components/
-│   ├── HeroDashboard.jsx      # Main hero section with CRT TV
-│   ├── TwentyOneReasons.jsx    # 21 reasons sticker grid
-│   ├── GrowthFinale.jsx        # Counter + letter finale
-│   ├── FloatingBbubbles.jsx    # Background bubbles
-│   └── MusicController.jsx     # Winamp-style player
-├── App.jsx            # Main app with section navigation
-├── main.jsx           # Entry point
-└── index.css          # Global styles + Tailwind
-```
-
-## 🚀 Getting Started
-
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-2. Start development server:
-   ```bash
-   npm run dev
-   ```
-
-3. Build for production:
-   ```bash
-   npm run build
-   ```
-
-## 🔧 Customization
-
-Edit `src/config.js` to customize:
-- `BACKGROUND_MUSIC` - Your birthday playlist
-- `HERO_VIDEO` - Main video/GIF in CRT frame
-- `PHOTO_FRAMES` - Add your own photos
-- `TWENTY_ONE_REASONS` - Your 21 messages
-- `LETTER_CONTENT` - Your handwritten note
-
-## 📝 License
-
-Made with 💕 for Kai's 21st Birthday!

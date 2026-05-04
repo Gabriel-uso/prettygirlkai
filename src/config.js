@@ -1,136 +1,97 @@
-// ============================================
-// Y2K RETRO-POP SCRAPBOOK CONFIG
-// Edit this file to customize your scrapbook!
-// ============================================
+export const ASSETS = {
+  camera: '/Polaroid_Now_Instant_Camera_Generation_3___Polaroid_US-removebg-preview.png',
+  cassette: '/WmgAGI0N-removebg-preview.png',
+  clickHand: '/指漫画の手をクリックイラスト画像とPSDフリー素材透過の無料ダウンロード_-_Pngtree-removebg-preview.png',
+  envelope: '/envelope.png',
+  exclamation: '/__-removebg-preview.png',
+  folder: '/folder.png',
+  googleEyes: '/google eyes.png',
+  petal: '/z_v0-Q8Y-removebg-preview.png',
+  photoStrip: '/polaroid-picture.png',
+  sunflower: '/Sunflower_flower_png_isolated_on_transparent_background___Premium_AI-generated_PSD-removebg-preview.png',
+}
 
-// 🎵 BACKGROUND MUSIC
-// Replace with your own music URL (MP3)
+export const SITE_COPY = {
+  birthdayGirl: 'Kai',
+  title: 'For Kai',
+  subtitle:
+    'A romantic birthday dossier, assembled from tiny proofs of love, soft paper, warm music, and the kind of beauty you keep returning to.',
+  dateLabel: 'twenty one',
+  catalog: 'Birthday Archive 021',
+}
+
 export const BACKGROUND_MUSIC = {
-  url: 'https://assets.mixkit.co/music/preview/mixkit-happy-children-113.mp3',
-  title: 'Happy Birthday Mix!',
-  artist: 'DJ Kai'
+  url: 'https://assets.mixkit.co/music/preview/mixkit-sweet-dreams-114.mp3',
+  title: 'Soft birthday radio',
+  artist: 'Curated for Kai',
 }
 
-// 🖼️ HERO SECTION - CRT TV FRAME
-export const HERO_VIDEO = {
-  // Use a video URL or GIF - replace with your own!
-  videoUrl: 'https://media.giphy.com/media/LpDmM2wSt6HmUw0a/giphy.gif',
-  altText: 'Birthday Girl'
-}
-
-// 📸 PHOTO FRAMES - Floating Windows
-// Add your own photos here! Types: 'polaroid' | 'cassette' | 'filmstrip'
-export const PHOTO_FRAMES = [
-  {
-    id: 1,
-    type: 'polaroid',
-    src: 'https://picsum.photos/300/350?random=1',
-    alt: 'Memory 1',
-    label: 'Day One ✨',
-    rotation: -5,
-    size: 'medium'
-  },
-  {
-    id: 2,
-    type: 'filmstrip',
-    src: 'https://picsum.photos/400/200?random=2',
-    alt: 'Memory 2',
-    label: 'Film Roll 🎞️',
-    rotation: 3,
-    size: 'large'
-  },
-  {
-    id: 3,
-    type: 'cassette',
-    src: 'https://picsum.photos/250/250?random=3',
-    alt: 'Memory 3',
-    label: ' mixtape ',
-    rotation: -2,
-    size: 'small'
-  },
-  {
-    id: 4,
-    type: 'polaroid',
-    src: 'https://picsum.photos/300/350?random=4',
-    alt: 'Memory 4',
-    label: 'Bestie Vibes 💕',
-    rotation: 4,
-    size: 'medium'
-  },
-  {
-    id: 5,
-    type: 'polaroid',
-    src: 'https://picsum.photos/300/350?random=5',
-    alt: 'Memory 5',
-    label: 'Adventure 🌍',
-    rotation: -3,
-    size: 'medium'
-  }
+export const HERO_NOTES = [
+  'the comfort giver',
+  'the room softener',
+  'the main character',
+  'the sweetest proof',
 ]
 
-// 💝 21 REASONS WHY - The Sentimental Core
-// Edit these with your own messages!
+export const DOSSIER_ROWS = [
+  { label: 'name', value: 'Kai' },
+  { label: 'date', value: 'May 2026' },
+  { label: 'edition', value: 'Twenty First' },
+  { label: 'role', value: 'The Love Everyone Remembers' },
+]
+
+export const MEMORY_FILES = [
+  {
+    id: '01',
+    title: 'First Proof',
+    caption: 'Every version of you has been worth saving.',
+    kind: 'note card',
+  },
+  {
+    id: '02',
+    title: 'Favorite Light',
+    caption: 'The room always knows when you arrive.',
+    kind: 'contact sheet',
+  },
+  {
+    id: '03',
+    title: 'Soft Witness',
+    caption: 'A whole archive of little moments saying: she was here, and it mattered.',
+    kind: 'folder tab',
+  },
+]
+
 export const TWENTY_ONE_REASONS = [
-  'Your laugh is my favorite song 🎵',
-  'You always know how to make me smile 😊',
-  'Your heart is pure gold ✨',
-  'You\'re the best adventure partner 🌍',
-  'Your creativity inspires me 🎨',
-  'You make everyone feel special 💖',
-  'Your strength amazes me 💪',
-  'You\'re beautifully unapologetic 🔥',
-  'Your kindness changes lives 🌟',
-  'You dance like nobody\'s watching 💃',
-  'Your friendship is a gift 🎁',
-  'You see beauty in everything 🌸',
-  'Your energy is contagious ⚡',
-  'You\'re my biggest cheerleader 📣',
-  'Your courage inspires me 🌈',
-  'You make the ordinary extraordinary ✨',
-  'Your loyalty is unmatched 💎',
-  'You believe in the impossible 🌙',
-  'Your smile lights up any room ☀️',
-  'You\'re wonderfully weird 🎭',
-  '21 years of being absolutely amazing 🎂'
+  'Your smile changes the whole room.',
+  'You make ordinary days feel dressed up.',
+  'You love people with your whole heart.',
+  'Your laugh is instantly recognizable.',
+  'You are gentle without being fragile.',
+  'You make confidence look beautiful.',
+  'You notice the tiny details.',
+  'You turn chaos into a story worth telling.',
+  'Your style has its own signature.',
+  'You are soft, funny, and powerful at once.',
+  'You make people feel chosen.',
+  'You carry light into every season.',
+  'Your friendship feels like home.',
+  'You keep growing without losing yourself.',
+  'You romanticize life in the best way.',
+  'You are brave about becoming more you.',
+  'You make love feel easy to believe in.',
+  'You are unforgettable in the quiet ways.',
+  'You deserve flowers for every version of you.',
+  'You are the plot twist and the happy ending.',
+  'Because 21 years of Kai is worth celebrating loudly.',
 ]
 
-// 🌸 GROWTH FINALE - Counter & Flowers
-export const COUNTER_CONFIG = {
-  targetNumber: 21,
-  flowerColors: ['#ff69b4', '#ffd700', '#00ffff', '#da70d6', '#ff6b6b'],
-  flowerCount: 50
-}
-
-// 💌 FINAL LETTER
 export const LETTER_CONTENT = {
-  title: 'A Note to My Favorite Person',
-  message: `Happy 21st Birthday! 🎉
-
-You're not just my best friend - you're my person. The one I call when something amazing happens, the one who makes ordinary days feel like adventures.
-
-Here's to 21 years of you being absolutely incredible. May this year bring you everything your beautiful heart desires.
-
-I love you more than all the stars in the sky! 🌟
-
-Forever yours,
-Your Person 💕`
-}
-
-// 🎨 COLOR PALETTE
-export const COLORS = {
-  pink: '#ff69b4',
-  yellow: '#ffd700',
-  cyan: '#00ffff',
-  purple: '#da70d6',
-  blue: '#4169e1',
-  coral: '#ff7f7f',
-  mint: '#98ff98'
-}
-
-// 📱 RESPONSIVE BREAKPOINTS
-export const BREAKPOINTS = {
-  mobile: '640px',
-  tablet: '768px',
-  desktop: '1024px',
-  wide: '1280px'
+  title: 'A letter tucked inside the folder',
+  message: [
+    'Happy 21st birthday, Kai.',
+    'I wanted this to feel like something found in a box years from now: warm paper, old photos, a little music still playing somewhere, and every page quietly insisting that you were loved with intention.',
+    'You are easy to celebrate because you make life feel more tender. You notice things. You care deeply. You bring a softness that does not ask permission to be powerful.',
+    'I hope this year gives you calm love, brave joy, beautiful surprises, and proof after proof that the world is kinder with you in it.',
+    'Always in your corner.',
+  ],
 }

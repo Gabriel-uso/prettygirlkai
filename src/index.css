@@ -3,70 +3,149 @@
 @tailwind utilities;
 
 :root {
-  --y2k-pink: #ff69b4;
-  --y2k-yellow: #ffd700;
-  --y2k-cyan: #00ffff;
-  --y2k-purple: #da70d6;
-  --y2k-blue: #4169e1;
+  --paper: #f5efe4;
+  --cream: #fff9ee;
+  --ink: #1f1a17;
+  --rust: #7d1718;
+  --blue-ink: #1b2c75;
+  --blush: #e9a7b8;
+  --sage: #567047;
+  --gold: #d8a957;
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Itim', cursive;
-  overflow-x: hidden;
-  background: 
-    linear-gradient(45deg, #1a1a2e 25%, transparent 25%),
-    linear-gradient(-45deg, #1a1a2e 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, #1a1a2e 75%),
-    linear-gradient(-45deg, transparent 75%, #1a1a2e 75%);
-  background-size: 20px 20px;
-  background-color: #0f0f1a;
+html {
+  scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(233, 167, 184, 0.2), transparent 28rem),
+    radial-gradient(circle at 85% 28%, rgba(216, 169, 87, 0.18), transparent 24rem),
+    var(--paper);
+  color: var(--ink);
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.28;
+  background-image:
+    linear-gradient(rgba(31, 26, 23, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 26, 23, 0.05) 1px, transparent 1px);
+  background-size: 38px 38px;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 260 260' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+img {
+  display: block;
+}
+
+::selection {
+  background: var(--rust);
+  color: var(--cream);
+}
+
 ::-webkit-scrollbar {
   width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: linear-gradient(90deg, var(--y2k-pink), var(--y2k-purple));
+  background: var(--paper);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--y2k-yellow);
-  border-radius: 10px;
-  border: 2px solid var(--y2k-cyan);
+  background: var(--rust);
+  border: 3px solid var(--paper);
 }
 
-/* Glassmorphism overlay */
-.glass-overlay {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.paper-grid {
+  background-image:
+    linear-gradient(rgba(31, 26, 23, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 26, 23, 0.08) 1px, transparent 1px);
+  background-size: 34px 34px;
 }
 
-/* CRT effect */
-.crt-effect {
-  position: relative;
+.shadow-paper {
+  box-shadow: 8px 8px 0 rgba(31, 26, 23, 0.12);
 }
 
-.crt-effect::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    rgba(18, 16, 16, 0) 50%,
-    rgba(0, 0, 0, 0.25) 50%
-  );
-  background-size: 100% 4px;
+.drop-shadow-cutout {
+  filter: drop-shadow(12px 14px 10px rgba(31, 26, 23, 0.22));
+}
+
+.flower-field {
+  position: fixed;
+  inset: 0;
+  z-index: 6;
   pointer-events: none;
-  z-index: 10;
+  opacity: 1;
+}
+
+.flower-field canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+
+.paper-float {
+  animation: paper-float 8s ease-in-out infinite;
+}
+
+.paper-float-delay {
+  animation: paper-float 9s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+@keyframes paper-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(var(--tw-rotate));
+  }
+  50% {
+    transform: translate3d(0, -16px, 0) rotate(var(--tw-rotate));
+  }
+}
+
+@media (max-width: 640px) {
+  .shadow-paper {
+    box-shadow: 5px 5px 0 rgba(31, 26, 23, 0.12);
+  }
 }

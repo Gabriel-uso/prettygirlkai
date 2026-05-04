@@ -1,77 +1,38 @@
 import { motion } from 'framer-motion'
+import { ASSETS } from '../config'
 
-export default function MusicController({ isPlaying, onToggle, title }) {
+export default function MusicController({ isPlaying, onToggle, title, artist }) {
   return (
-    <motion.div
-      className="fixed bottom-6 left-6 z-50"
-      initial={{ x: -100, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ type: "spring", stiffness: 300 }}
+    <motion.aside
+      className="fixed bottom-4 left-4 z-50 w-[min(330px,calc(100vw-32px))]"
+      initial={{ y: 28, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ type: 'spring', stiffness: 180, damping: 18, delay: 0.35 }}
     >
-      <motion.div
-        className="flex items-center gap-3 bg-gradient-to-r from-[#1a1a2e]/90 to-[#2d2d4a]/90 backdrop-blur-md px-4 py-3 rounded-full border border-[#ffd700]/30 shadow-lg"
-        whileHover={{ scale: 1.02 }}
-      >
-        {/* Vinyl Record (rotates when playing) */}
-        <motion.div
-          className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4169e1] to-[#da70d6]"
-          animate={{ rotate: isPlaying ? 360 : 0 }}
-          transition={{
-            duration: isPlaying ? 2 : 0,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          style={{
-            background: 'conic-gradient(from 0deg, #4169e1, #da70d6, #ff69b4, #ffd700, #4169e1)',
-          }}
-        >
-          <div className="w-3 h-3 bg-white rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-        </motion.div>
-
-        {/* Track Info */}
-        <div className="flex flex-col">
-          <span className="text-xs text-[#00ffff] font-['Cherry_Bomb_One']">
-            {isPlaying ? '▶ NOW PLAYING' : '❚❚ PAUSED'}
-          </span>
-          <span className="text-sm text-white font-['Gaegu'] truncate max-w-[120px]">
-            {title}
-          </span>
+      <div className="relative">
+        <img
+          src={ASSETS.cassette}
+          alt=""
+          className="absolute -left-5 -top-9 w-24 rotate-[-9deg] drop-shadow-cutout"
+        />
+        <div className="ml-9 border border-ink bg-cream px-4 py-3 shadow-paper">
+          <div className="mb-2 flex items-center justify-between gap-3 border-b border-ink pb-2">
+            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-rust">
+              {isPlaying ? 'now playing' : 'press play'}
+            </p>
+            <button
+              type="button"
+              onClick={onToggle}
+              className="grid h-9 w-9 place-items-center border border-ink bg-rust font-mono text-sm font-bold text-cream shadow-[3px_3px_0_#1f1a17] transition hover:-translate-y-0.5"
+              aria-label={isPlaying ? 'Pause music' : 'Play music'}
+            >
+              {isPlaying ? 'II' : '>'}
+            </button>
+          </div>
+          <p className="truncate font-serif text-xl italic text-ink">{title}</p>
+          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink/55">{artist}</p>
         </div>
-
-        {/* Play/Pause Button */}
-        <motion.button
-          onClick={onToggle}
-          className="w-10 h-10 rounded-full bg-[#ffd700] flex items-center justify-center shadow-md"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          {isPlaying ? (
-            <span className="text-lg">⏸️</span>
-          ) : (
-            <span className="text-lg">▶️</span>
-          )}
-        </motion.button>
-      </motion.div>
-
-      {/* Sound Wave Visualization */}
-      {isPlaying && (
-        <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 flex gap-1">
-          {[...Array(5)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="w-1 bg-[#00ffff] rounded-full"
-              animate={{
-                height: [8, 20, 8],
-              }}
-              transition={{
-                duration: 0.5,
-                repeat: Infinity,
-                delay: i * 0.1,
-              }}
-            />
-          ))}
-        </div>
-      )}
-    </motion.div>
+      </div>
+    </motion.aside>
   )
 }
