@@ -13,19 +13,31 @@ export const ASSETS = {
 }
 
 export const SITE_COPY = {
-  birthdayGirl: 'Kai',
-  title: 'For Kai',
+  birthdayGirl: 'Kaima',
+  title: 'For Kaima, with all my love.',
   subtitle:
     'A romantic birthday dossier, assembled from tiny proofs of love, soft paper, warm music, and the kind of beauty you keep returning to.',
   dateLabel: 'twenty one',
   catalog: 'Birthday Archive 021',
 }
 
-export const BACKGROUND_MUSIC = {
-  url: 'https://assets.mixkit.co/music/preview/mixkit-sweet-dreams-114.mp3',
-  title: 'Soft birthday radio',
-  artist: 'Curated for Kai',
-}
+export const BACKGROUND_MUSIC = [
+  {
+    url: '/bestpart.mp3',
+    title: 'Best Part',
+    artist: 'Daniel Caesar ft. H.E.R.',
+  },
+  {
+    url: '/blessed.mp3',
+    title: 'Blessed',
+    artist: 'Daniel Caesar',
+  },
+  {
+    url: '/ferrari.mp3',
+    title: 'White Ferrari',
+    artist: 'Frank Ocean',
+  },
+]
 
 export const HERO_NOTES = [
   'the handmaid of the Lord',
@@ -35,7 +47,7 @@ export const HERO_NOTES = [
 ]
 
 export const DOSSIER_ROWS = [
-  { label: 'name', value: 'Kai' },
+  { label: 'name', value: 'Kaima' },
   { label: 'date', value: '8 May 2026' },
   { label: 'edition', value: 'Twenty First' },
   { label: 'role', value: 'The Love Everyone Remembers' },
@@ -51,7 +63,7 @@ export const MEMORY_FILES = [
   {
     id: '02',
     title: 'Favorite Light',
-    caption: 'The make every place you step into feel softer and more beautiful.',
+    caption: 'You make every place you step into feel softer and more beautiful.',
     kind: 'contact sheet',
   },
   {
@@ -106,7 +118,7 @@ export const REASON_MEDIA = [
   { type: 'image', src: '/img17.jpeg' },
   { type: 'video', src: '/vid18.mp4' },
   { type: 'image', src: '/img19.jpeg' },
-  { type: 'image', src: '/img20.jpeg' },
+  { type: 'video', src: '/vid20.mp4' },
   { type: 'image', src: '/img21.jpg' },
 ]
 
@@ -117,7 +129,8 @@ export const LETTER_CONTENT = {
     'I wanted this to feel like something found in a box years from now: warm paper, old photos, a little music still playing somewhere, and every page quietly insisting that you were loved with intention.',
     'You are such a gift to me and everyone around you. I hope this little site makes you feel as special as you are. I love you so much.',
     'You deserve the best things in the world, and Godswilling, I hope to give you as many of them as I can.',
-    '21 looks really great on you, and I pray this year brings you growth, happiness and Peace',
+    '21 looks really great on you, and I pray this year brings you growth, happiness and Peace.',
     'PS: I am always going to try to impress you, you inspire me. I pray I can keep up.',
+    'Happy birthday again, kaima. I love you very much prettygirlkai. You truly are pretty.',
   ],
 }

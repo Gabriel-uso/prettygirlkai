@@ -70,7 +70,7 @@ export default function GrowthFinale() {
               <img src={ASSETS.petal} alt="" className="w-16 rotate-[18deg]" />
             </div>
 
-            <div className="space-y-5 font-script text-[clamp(2rem,4vw,3.45rem)] leading-[1.02] text-blueInk">
+            <div className="space-y-5 font-rougeScript text-[clamp(2rem,4vw,3.45rem)] leading-[1.02] text-blueInk">
               {LETTER_CONTENT.message.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}

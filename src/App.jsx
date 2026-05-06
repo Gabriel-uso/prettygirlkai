@@ -16,16 +16,38 @@ const navItems = [
 
 function App() {
   const [isMusicPlaying, setIsMusicPlaying] = useState(false)
+  const [currentSongIndex, setCurrentSongIndex] = useState(0)
   const audioRef = useRef(null)
 
   useEffect(() => {
-    const audio = new Audio(BACKGROUND_MUSIC.url)
-    audio.loop = true
+    const playNextSong = () => {
+      setCurrentSongIndex((prev) => (prev + 1) % BACKGROUND_MUSIC.length)
+    }
+
+    const audio = new Audio(BACKGROUND_MUSIC[0].url)
     audio.volume = 0.24
+    audio.onended = playNextSong
     audioRef.current = audio
 
     return () => audio.pause()
   }, [])
+
+  useEffect(() => {
+    const audio = audioRef.current
+    if (!audio) return
+
+    const nextUrl = BACKGROUND_MUSIC[currentSongIndex].url
+    if (audio.src !== new URL(nextUrl, window.location.origin).href) {
+      const shouldPlay = isMusicPlaying
+      audio.pause()
+      audio.src = nextUrl
+      audio.load()
+
+      if (shouldPlay) {
+        audio.play().catch(() => setIsMusicPlaying(false))
+      }
+    }
+  }, [currentSongIndex, isMusicPlaying])
 
   const toggleMusic = () => {
     const audio = audioRef.current
@@ -70,8 +92,8 @@ function App() {
       <MusicController
         isPlaying={isMusicPlaying}
         onToggle={toggleMusic}
-        title={BACKGROUND_MUSIC.title}
-        artist={BACKGROUND_MUSIC.artist}
+        title={BACKGROUND_MUSIC[currentSongIndex].title}
+        artist={BACKGROUND_MUSIC[currentSongIndex].artist}
       />
 
       <main>

@@ -9,8 +9,8 @@ function ReasonMedia({ media, activeReason, activeIndex }) {
 
   if (isMissing) {
     return (
-      <div className="grid min-h-[100px] place-items-center border border-dashed border-ink/35 bg-cream/62 p-6 sm:min-h-[240px]">
-        <p className="max-w-[10rem] text-center font-mono text-[10px] uppercase tracking-[0.18em] text-ink/45">
+      <div className="grid min-h-[220px] place-items-center border border-dashed border-ink/35 bg-cream/62 p-6 sm:min-h-[320px]">
+        <p className="max-w-[18rem] text-center font-mono text-[10px] uppercase tracking-[0.18em] text-ink/45">
           media space / add image or video when ready
         </p>
       </div>
@@ -26,7 +26,7 @@ function ReasonMedia({ media, activeReason, activeIndex }) {
       <video
         key={mediaKey}
         src={media.src}
-        className="h-full min-h-[160px] w-full border border-ink bg-ink object-cover sm:min-h-[240px]"
+        className="h-full min-h-[220px] w-full border border-ink bg-ink object-cover sm:min-h-[320px]"
         controls
         playsInline
         preload="metadata"
@@ -41,7 +41,7 @@ function ReasonMedia({ media, activeReason, activeIndex }) {
       key={mediaKey}
       src={media.src}
       alt={`Memory for reason ${activeIndex + 1}`}
-      className="h-full min-h-[160px] w-full border border-ink bg-cream object-cover sm:min-h-[240px]"
+      className="h-full min-h-[220px] w-full border border-ink bg-cream object-cover sm:min-h-[320px]"
       onError={handleError}
     />
   )
@@ -114,7 +114,7 @@ export default function TwentyOneReasons() {
           </div>
 
           <aside className="relative min-h-[580px]">
-            <div className="border border-ink bg-paper p-3 shadow-paper sm:p-5">
+            <div className="border border-ink bg-paper p-5 shadow-paper sm:p-7">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeMedia?.src ?? activeIndex}
@@ -134,7 +134,7 @@ export default function TwentyOneReasons() {
               <AnimatePresence mode="wait">
                 <motion.p
                   key={activeReason}
-                  className="mt-8 font-serif text-[clamp(1rem,3vw,2rem)] italic leading-[0.9] tracking-[-0.03em] text-ink"
+                  className="mt-8 font-serif text-[clamp(1rem,2vw,1.5rem)] italic leading-[0.9] tracking-[-0.03em] text-ink"
                   initial={{ y: 18, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -18, opacity: 0 }}

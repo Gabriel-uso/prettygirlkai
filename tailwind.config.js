@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         serif: ['"Instrument Serif"', 'Georgia', 'serif'],
         script: ['"Mrs Saint Delafield"', 'cursive'],
+        rougeScript: ['"Rouge Script"', 'cursive'],
         mono: ['"Space Mono"', 'monospace'],
         sans: ['"Inter Tight"', 'system-ui', 'sans-serif'],
       },

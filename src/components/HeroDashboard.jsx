@@ -100,7 +100,7 @@ export default function HeroDashboard() {
             </div>
 
             <motion.h1
-              className="font-serif text-[clamp(5.4rem,17vw,18rem)] italic leading-[0.72] tracking-[-0.04em] text-rust"
+              className="font-serif text-[clamp(3rem,11vw,11rem)] italic leading-[0.72] tracking-[-0.04em] text-rust"
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
