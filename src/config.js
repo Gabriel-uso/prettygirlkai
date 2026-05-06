@@ -102,7 +102,7 @@ export const REASON_MEDIA = [
   { type: 'image', src: '/img1.jpg' },
   { type: 'image', src: '/img2.png' },
   { type: 'image', src: '/img3.jpg' },
-  { type: 'video', src: '/vid4.mp4' },
+  { type: 'video', src: '/vid 4.mp4' },
   { type: 'image', src: '/img5.jpg' },
   { type: 'image', src: '/img6.jpg' },
   { type: 'image', src: '/img7.jpg' },
