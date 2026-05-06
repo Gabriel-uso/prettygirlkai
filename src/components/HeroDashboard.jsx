@@ -36,7 +36,7 @@ function MemoryFolder() {
             proof she was loved carefully
           </h2>
           <p className="mt-8 max-w-lg text-lg leading-8 text-ink/68">
-            The site is built like a keepsake kit: photos, paper scraps, music, flowers, tiny labels, and notes that feel found instead of generated.
+            This site is built to be a soft archive of little moments, a digital safespace, and a witness to the fact that you are loved Kaima.
           </p>
         </div>
 
@@ -158,7 +158,7 @@ export default function HeroDashboard() {
             />
             <div className="absolute bottom-[7%] right-[3%] z-30 max-w-[220px] border border-ink bg-cream p-4 shadow-paper">
               <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-rust">found note</p>
-              <p className="mt-2 font-script text-4xl leading-8 text-blueInk">today is yours</p>
+              <p className="mt-2 font-sans text-sm leading-8 text-blueInk">stop being mean to Ifechukwu :(</p>
             </div>
             <div className="absolute bottom-[30%] right-[4%] z-40">
               <AnimatePresence mode="wait">
@@ -177,7 +177,7 @@ export default function HeroDashboard() {
                         tiny secret
                       </p>
                       <p className="mt-3 font-script text-4xl leading-8 text-blueInk">
-                        you make every little thing feel sweeter.
+                        you make every thing better, everything
                       </p>
                     </div>
                   </motion.div>
@@ -208,7 +208,7 @@ export default function HeroDashboard() {
               archived like a beautiful secret
             </h2>
             <p className="mt-7 max-w-lg text-lg leading-8 text-ink/68">
-              A restrained identity-card moment inspired by old forms, handwritten ink, and photobooth strips.
+              i actually do wish i could archive you like a secret sometimes. but you are meant to be known, celebrated, and loved loudly. so here we are, with a whole record of reasons why you are worth celebrating.
             </p>
           </div>
           <DossierTable />

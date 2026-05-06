@@ -28,15 +28,15 @@ export const BACKGROUND_MUSIC = {
 }
 
 export const HERO_NOTES = [
-  'the comfort giver',
-  'the room softener',
-  'the main character',
-  'the sweetest proof',
+  'the handmaid of the Lord',
+  'the angel baby princess',
+  'the absolute love of my life',
+  'the dramatic one',
 ]
 
 export const DOSSIER_ROWS = [
   { label: 'name', value: 'Kai' },
-  { label: 'date', value: 'May 2026' },
+  { label: 'date', value: '8 May 2026' },
   { label: 'edition', value: 'Twenty First' },
   { label: 'role', value: 'The Love Everyone Remembers' },
 ]
@@ -51,7 +51,7 @@ export const MEMORY_FILES = [
   {
     id: '02',
     title: 'Favorite Light',
-    caption: 'The room always knows when you arrive.',
+    caption: 'The make every place you step into feel softer and more beautiful.',
     kind: 'contact sheet',
   },
   {
@@ -63,46 +63,61 @@ export const MEMORY_FILES = [
 ]
 
 export const TWENTY_ONE_REASONS = [
-  'Your smile changes the whole room.',
-  'You make ordinary days feel dressed up.',
-  'You love people with your whole heart.',
-  'Your laugh is instantly recognizable.',
-  'You are gentle without being fragile.',
-  'You make confidence look beautiful.',
-  'You notice the tiny details.',
-  'You turn chaos into a story worth telling.',
-  'Your style has its own signature.',
-  'You are soft, funny, and powerful at once.',
-  'You make people feel chosen.',
-  'You carry light into every season.',
-  'Your friendship feels like home.',
-  'You keep growing without losing yourself.',
-  'You romanticize life in the best way.',
-  'You are brave about becoming more you.',
-  'You make love feel easy to believe in.',
-  'You are unforgettable in the quiet ways.',
-  'You deserve flowers for every version of you.',
-  'You are the plot twist and the happy ending.',
-  'Because 21 years of Kai is worth celebrating loudly.',
+  'You are so cute, i mean look at you as a baby, asides from physical changes, you are literally this cute 90 % of the time, my angel baby princess.',
+  'You are really beautiful Kaima, no really you are one of the most beautiful people I have ever seen, and I am not just saying that because I like you, I mean it with my whole heart.',
+  'I love the way you look at me when I am yapping hehe, it makes me feel seen and smart. This is how you make everyone around you feel, you are an amazing listener and you make people feel like they matter.',
+  'Your have such a heartwarming smile and a beautiful laugh, I could quite literally stare at you smiling all day. ugh!',
+  'You could really outmog at least 80% of the population, gosh look at that face',
+  'You know so much stuff Kaima, you are like really smart and its soooooo attractive.',
+  'Always remember that you are a strong black woman and you can literally do anything, I know this because have had frontrow seats to your strength and resilience.',
+  '**photo break** This picture makes me want to violently kiss you, rawr, woof woof, grr!!! You make me feral omo',
+  'When God said "Your body is a temple", he was talking about you. You are a literally built like a goddess. I need you omo, let me worship you please.',
+  'In a parallel universe you are probably a super famous model, look at that pose! clock itt.',
+  'You smell like sunshine pookie, i dont know how to explain it i just love how you smell. I want to marry you for this reason alone, i want my sheets to always smell like you.',
+  'You are so effortlessly cool my dude, like if i was not super attracted to you (impossible) i would want to be your friend just because of your aura.',
+  'I sometimes enjoy making you mad because your mad face is really cute, but I also love how passionate you are about things, until you start being mean to me. Stop being mean to me Chukwukaima, it makes me sad :(',
+  'I love how you look out for your friends, it is really sweet. Anyone would be blessed to have you as a friend.',
+  'Hehe, I love your cute forehead, it is so kissable. I want to kiss your forehead everyday.',
+  'No words Kaima, No words. You took this picture yourself, good thing you know lmaooo.',
+  'You have the most amazing bum bum baby, it is so big and comfy and here is me resting my head on it. Honestly, therapeutic. It takes away my worries.',
+  'You have been through so much in your life kaima and it is incredible seeing you grow and mature into a woman. I am so proud of you, I am proud of the woman you are becoming Kaima.',
+  'Chukwukaima Ezebuenyi Daniella, your parents are solucky to have you, you are an amazing daughter and sister.',
+  'It is okay to feel old at 21, but with every year that has passed you have only gotten more beautiful, this is you now; hotter, wiser, cuntier, better. And I am sure that you are going to be alright. You got this Kaima.',
+  'I am grateful every day that you were born, and that I got to be a huge part of some of your life(I hope i still remain future-wise) You taught me how to love myself, you loved me Kaima, you really loved me and I am eternally grateful. I love you so much Kaima.You are the best.',
 ]
 
-export const REASON_MEDIA = TWENTY_ONE_REASONS.map((_, index) => {
-  const number = index + 1
-
-  if (number === 4 || number === 9) {
-    return { type: 'video', src: `/vid${number}` }
-  }
-
-  return { type: 'image', src: `/img${number}` }
-})
+export const REASON_MEDIA = [
+  { type: 'image', src: '/img1.jpg' },
+  { type: 'image', src: '/img2.png' },
+  { type: 'image', src: '/img3.jpg' },
+  { type: 'video', src: '/vid4.mp4' },
+  { type: 'image', src: '/img5.jpg' },
+  { type: 'image', src: '/img6.jpg' },
+  { type: 'image', src: '/img7.jpg' },
+  { type: 'image', src: '/img8.jpeg' },
+  { type: 'video', src: '/vid9.mp4' },
+  { type: 'image', src: '/img10.jpeg' },
+  { type: 'image', src: '/img11.jpeg' },
+  { type: 'image', src: '/img12.jpg' },
+  { type: 'image', src: '/img13.jpg' },
+  { type: 'image', src: '/img14.jpg' },
+  { type: 'image', src: '/img15.jpg' },
+  { type: 'image', src: '/img16.jpg' },
+  { type: 'image', src: '/img17.jpeg' },
+  { type: 'video', src: '/vid18.mp4' },
+  { type: 'image', src: '/img19.jpeg' },
+  { type: 'image', src: '/img20.jpeg' },
+  { type: 'image', src: '/img21.jpg' },
+]
 
 export const LETTER_CONTENT = {
   title: 'A letter tucked inside the folder',
   message: [
-    'Happy 21st birthday, Kai.',
+    'Happy 21st birthday, Kaima.',
     'I wanted this to feel like something found in a box years from now: warm paper, old photos, a little music still playing somewhere, and every page quietly insisting that you were loved with intention.',
-    'You are easy to celebrate because you make life feel more tender. You notice things. You care deeply. You bring a softness that does not ask permission to be powerful.',
-    'I hope this year gives you calm love, brave joy, beautiful surprises, and proof after proof that the world is kinder with you in it.',
-    'Always in your corner.',
+    'You are such a gift to me and everyone around you. I hope this little site makes you feel as special as you are. I love you so much.',
+    'You deserve the best things in the world, and Godswilling, I hope to give you as many of them as I can.',
+    '21 looks really great on you, and I pray this year brings you growth, happiness and Peace',
+    'PS: I am always going to try to impress you, you inspire me. I pray I can keep up.',
   ],
 }

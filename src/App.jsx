@@ -10,7 +10,7 @@ import { BACKGROUND_MUSIC, SITE_COPY } from './config'
 const navItems = [
   { id: 'home', label: 'Index' },
   { id: 'dossier', label: 'Dossier' },
-  { id: 'reasons', label: '21 Reasons' },
+  { id: 'reasons', label: '21 Things' },
   { id: 'letter', label: 'Letter' },
 ]
 

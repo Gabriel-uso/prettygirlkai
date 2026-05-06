@@ -9,8 +9,8 @@ function ReasonMedia({ media, activeReason, activeIndex }) {
 
   if (isMissing) {
     return (
-      <div className="grid min-h-[220px] place-items-center border border-dashed border-ink/35 bg-cream/62 p-6 sm:min-h-[320px]">
-        <p className="max-w-[18rem] text-center font-mono text-[10px] uppercase tracking-[0.18em] text-ink/45">
+      <div className="grid min-h-[100px] place-items-center border border-dashed border-ink/35 bg-cream/62 p-6 sm:min-h-[240px]">
+        <p className="max-w-[10rem] text-center font-mono text-[10px] uppercase tracking-[0.18em] text-ink/45">
           media space / add image or video when ready
         </p>
       </div>
@@ -26,7 +26,7 @@ function ReasonMedia({ media, activeReason, activeIndex }) {
       <video
         key={mediaKey}
         src={media.src}
-        className="h-full min-h-[220px] w-full border border-ink bg-ink object-cover sm:min-h-[320px]"
+        className="h-full min-h-[160px] w-full border border-ink bg-ink object-cover sm:min-h-[240px]"
         controls
         playsInline
         preload="metadata"
@@ -41,7 +41,7 @@ function ReasonMedia({ media, activeReason, activeIndex }) {
       key={mediaKey}
       src={media.src}
       alt={`Memory for reason ${activeIndex + 1}`}
-      className="h-full min-h-[220px] w-full border border-ink bg-cream object-cover sm:min-h-[320px]"
+      className="h-full min-h-[160px] w-full border border-ink bg-cream object-cover sm:min-h-[240px]"
       onError={handleError}
     />
   )
@@ -59,11 +59,11 @@ export default function TwentyOneReasons() {
           <div>
             <p className="kicker">side b / the proof</p>
             <h2 className="mt-4 max-w-3xl font-serif text-[clamp(3.8rem,10vw,10rem)] italic leading-[0.78] tracking-[-0.03em] text-rust">
-              21 things
+              21 things you should know
             </h2>
           </div>
           <p className="max-w-xl text-lg leading-8 text-ink/68">
-            Built like a vintage album insert: every row is a track, every track is one more reason she deserves the whole room softened for her.
+            Built like a vintage album that takes you down memory lane; every row is a track, every track is one more reason you deserve the whole room softened for you.
           </p>
         </div>
 
@@ -78,7 +78,7 @@ export default function TwentyOneReasons() {
                 <span className="border-r border-t border-ink px-2 py-2">21</span>
                 <span className="border-r border-t border-ink px-2 py-2">forever</span>
                 <span className="border-r border-t border-ink px-2 py-2">21</span>
-                <span className="border-t border-ink px-2 py-2">Kai</span>
+                <span className="border-t border-ink px-2 py-2">Kaima</span>
               </div>
 
               <div className="max-h-[650px] overflow-y-auto border-y border-ink">
@@ -114,7 +114,7 @@ export default function TwentyOneReasons() {
           </div>
 
           <aside className="relative min-h-[580px]">
-            <div className="border border-ink bg-paper p-5 shadow-paper sm:p-7">
+            <div className="border border-ink bg-paper p-3 shadow-paper sm:p-5">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeMedia?.src ?? activeIndex}
@@ -134,7 +134,7 @@ export default function TwentyOneReasons() {
               <AnimatePresence mode="wait">
                 <motion.p
                   key={activeReason}
-                  className="mt-8 font-serif text-[clamp(3rem,7vw,6.7rem)] italic leading-[0.9] tracking-[-0.03em] text-ink"
+                  className="mt-8 font-serif text-[clamp(1rem,3vw,2rem)] italic leading-[0.9] tracking-[-0.03em] text-ink"
                   initial={{ y: 18, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -18, opacity: 0 }}
